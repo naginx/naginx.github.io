@@ -87,8 +87,8 @@ code {
 }
 
 /* ===== Code blocks ===== */
-.markdown-body pre:not(.mermaid-pre),
-pre:not(.mermaid-pre) {
+.markdown-body pre:not(.mermaid),
+pre:not(.mermaid) {
   background-color: #1e1e1e !important;
   border: 1px solid #3a3a3a !important;
   border-radius: 4px !important;
@@ -97,32 +97,44 @@ pre:not(.mermaid-pre) {
   line-height: 1.5 !important;
 }
 
-.markdown-body pre code:not(.mermaid-code),
-pre code:not(.mermaid-code) {
+.markdown-body pre:not(.mermaid) code,
+pre:not(.mermaid) code {
   color: #d4d4d4 !important;
   background-color: transparent !important;
   padding: 0 !important;
   font-size: 0.875em !important;
 }
 
-/* ===== Mermaid diagrams ===== */
-.mermaid-wrapper,
-.mermaid-content,
-.mermaid-wrapper pre,
-.mermaid-content pre {
+/* ===== Mermaid diagrams (bierner.markdown-mermaid) ===== */
+/* DOM構造:
+   <div class="mermaid-wrapper">
+     <div class="mermaid-content">
+       <pre class="mermaid" style="all: unset;">
+         <svg>...</svg>
+       </pre>
+     </div>
+   </div>
+   または
+   <div class="mermaid-wrapper">
+     <div class="mermaid-content">
+       <div class="mermaid">
+         <svg>...</svg>
+       </div>
+     </div>
+   </div>
+*/
+.mermaid-wrapper {
   background-color: #ffffff !important;
   border: 1px solid #d0d0d0 !important;
   border-radius: 4px !important;
-  padding: 1em !important;
-  overflow-x: auto !important;
+  overflow: hidden !important;
 }
 
-.mermaid-wrapper *,
-.mermaid-content *,
-.mermaid-wrapper pre code,
-.mermaid-content pre code {
+pre.mermaid,
+div.mermaid {
+  background-color: #ffffff !important;
+  border: none !important;
   color: #1a1a1a !important;
-  background-color: transparent !important;
 }
 
 /* ===== Tables ===== */
