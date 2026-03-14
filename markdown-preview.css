@@ -106,11 +106,10 @@ pre code:not(.mermaid-code) {
 }
 
 /* ===== Mermaid diagrams ===== */
-.mermaid-pre,
-pre:has(.mermaid),
-pre:has(svg),
-div.mermaid,
-.markdown-mermaid {
+.mermaid-wrapper,
+.mermaid-content,
+.mermaid-wrapper pre,
+.mermaid-content pre {
   background-color: #ffffff !important;
   border: 1px solid #d0d0d0 !important;
   border-radius: 4px !important;
@@ -118,11 +117,10 @@ div.mermaid,
   overflow-x: auto !important;
 }
 
-.mermaid-pre code,
-pre:has(.mermaid) code,
-pre:has(svg) code,
-div.mermaid *,
-.markdown-mermaid * {
+.mermaid-wrapper *,
+.mermaid-content *,
+.mermaid-wrapper pre code,
+.mermaid-content pre code {
   color: #1a1a1a !important;
   background-color: transparent !important;
 }
